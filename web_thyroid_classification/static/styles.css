@@ -1,0 +1,117 @@
+/* Thiết lập kiểu dáng cho toàn bộ trang :màu sắc, bố cục  */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/nenmoi.png'); /* Thay bằng đường dẫn hình ảnh */
+    background-size: cover; /* Ảnh phủ kín */
+    background-repeat: no-repeat; /* Không lặp lại */
+    background-position: center; /* Căn giữa hình nền */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Kiểu dáng cho container chính */
+.container {
+    background-image: url('/static/yte.jpg'); /* Thay bằng đường dẫn hình ảnh */
+    background-size: cover; /* Ảnh phủ kín */
+    background-repeat: no-repeat; /* Không lặp lại */
+    background-position: center; /* Căn giữa hình nền */
+    background-color: #ffffff; /* Màu nền phụ nếu ảnh không tải được */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Tiêu đề chính */
+h1 {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Kiểu dáng cho nhãn và nút chọn file */
+label[for="file"] {
+    display: inline-block;
+    background-color: #6c757d;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+label[for="file"]:hover {
+    background-color: #5a6268;
+}
+
+/* Ẩn input file mặc định */
+input[type="file"] {
+    display: none;
+}
+
+/* Nút phân loại */
+button {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Kết quả phân loại */
+.result {
+    display: none; /* Ẩn trước khi có kết quả */
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    color: #343a40;
+}
+
+/* Phần xem trước ảnh */
+.preview {
+    margin-top: 15px;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.preview img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Điều chỉnh cho thiết bị di động */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

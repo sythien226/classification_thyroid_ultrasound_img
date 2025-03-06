@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân Loại Ảnh Tuyến Giáp</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5 text-center">
+        <img src="{{ url_for('static', filename='logo1.png') }}" alt="Logo Tuyến Giáp" width="150" class="mb-3">
+        <h1 class="text-primary">Phân Loại Ảnh Tuyến Giáp</h1>
+        <img src="{{ url_for('static', filename='newbacsi.png') }}" alt="Ảnh minh họa" class="img-fluid mb-4" style="max-width: 100%; border-radius: 10px;">
+    
+        <!-- Form tải lên hình ảnh và gửi yêu cầu phân loại -->
+        <form onsubmit="event.preventDefault(); classifyImage();" enctype="multipart/form-data" class="mt-4">
+            <div class="form-group">
+                <label for="file" class="font-weight-bold">Chọn hình ảnh tuyến giáp:</label>
+                <input type="file" name="file" id="file" class="form-control-file" required>
+            </div>
+            <button type="submit" class="btn btn-success">Phân Loại</button>
+        </form>
+
+        <!-- Khung để hiển thị kết quả và ảnh tải lên -->
+        <div class="alert alert-info mt-4 result" style="display: none;">
+            <h2>Kết quả: <span id="resultLabel"></span></h2>
+        </div>
+        <div class="preview mt-3"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
